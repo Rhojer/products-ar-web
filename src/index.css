@@ -40,13 +40,33 @@
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #f0edf1;
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
   background: #e4beb3;
-  border-radius: 4px;
+  border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
+  background: #ae3200;
+}
+
+/* Modal isolated scrollbar */
+.modal-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #d1b1a7 transparent;
+}
+.modal-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+.modal-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 8px 0;
+}
+.modal-scrollbar::-webkit-scrollbar-thumb {
+  background: #d1b1a7;
+  border-radius: 9999px;
+}
+.modal-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #ae3200;
 }
 

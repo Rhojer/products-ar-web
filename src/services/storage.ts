@@ -2,7 +2,7 @@ import { get, set, del, keys } from 'idb-keyval';
 import { RestaurantData, BrandSettings, SocialLinks, LocationInfo } from '../types/restaurant';
 import { INITIAL_RESTAURANT_DATA } from '../data/initialData';
 
-const STORAGE_KEY = 'aura_postres_restaurant_data_v2';
+const STORAGE_KEY = 'aura_postres_restaurant_data_v3';
 const IDB_PREFIX_GLB = 'glb_model_';
 const IDB_PREFIX_IMG = 'img_cover_';
 
@@ -13,8 +13,9 @@ export const loadRestaurantData = async (): Promise<RestaurantData> => {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) {
-      // Clean up previous v1 cache if exists
+      // Clean up previous v1 and v2 cache if exists
       localStorage.removeItem('aura_gastro_restaurant_data_v1');
+      localStorage.removeItem('aura_postres_restaurant_data_v2');
       await saveRestaurantData(INITIAL_RESTAURANT_DATA);
       return INITIAL_RESTAURANT_DATA;
     }

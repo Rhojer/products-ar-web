@@ -33,7 +33,7 @@ export const INITIAL_RESTAURANT_DATA: RestaurantData = {
   socials: {
     instagram: 'https://instagram.com/aura_patisserie',
     tiktok: 'https://tiktok.com/@aurapatisserie',
-    whatsapp: '+525512345678',
+    whatsapp: '+584129506476',
     facebook: 'https://facebook.com/aurapatisseriemx',
     website: 'https://aura-bistro.com'
   },
@@ -47,7 +47,7 @@ export const INITIAL_RESTAURANT_DATA: RestaurantData = {
     googleMapsEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.6617066925235!2d-99.19658592395349!3d19.430229381847113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2020272b1604d%3A0xe5495f87b8dbcb2b!2sAv.%20Pdte.%20Masaryk%20410%2C%20Polanco%2C%20Polanco%20IV%20Secc%2C%20Miguel%20Hidalgo%2C%2011550%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses!2smx!4v1710000000000!5m2!1ses!2smx',
     metroBusAccess: 'Metro Polanco (Línea 7) a 6 minutos caminando. Acceso directo por Av. Molière y Masaryk.',
     parkingInfo: 'Valet Parking en puerta sobre Masaryk. Servicio concierge para pedidos especiales y mesas.',
-    phone: '+52 55 9123 4567',
+    phone: '0412-9506476',
     email: 'concierge@aurapatisserie.mx'
   },
   dishes: [
@@ -55,9 +55,9 @@ export const INITIAL_RESTAURANT_DATA: RestaurantData = {
       id: 'marquesa-limon',
       name: 'Marquesa de Limón Artesanal',
       category: 'postres',
-      price: 8.50,
+      price: 3.50,
       currency: '$',
-      coverImage: 'https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=800&q=80',
+      coverImage: './images/marquesa-limon.jpg',
       glbModelUrl: './models/marquesa-limon.glb',
       dimensions: {
         diameterCm: 12,
@@ -65,7 +65,7 @@ export const INITIAL_RESTAURANT_DATA: RestaurantData = {
         heightCm: 12.2,
         portionWeightG: 220
       },
-      shortDescription: 'Capas delicadas de galleta María artesanal alternadas con crema suave de limón fresco, ralladura de lima y un toque aterciopelado de leche condensada.',
+      shortDescription: 'Para los antojitos de la tarde. Capas delicadas de galleta María artesanal alternadas con crema suave de limón fresco, ralladura de lima y un toque aterciopelado de leche condensada.',
       fullDescription: 'Nuestra emblemática Marquesa de Limón equilibra la acidez fresca del limón amarillo y verde con la sutil dulzura de nuestra crema artesanal reducida, intercalada con finas capas de galleta María infusionada con ralladura de lima kaffir.',
       keyIngredients: ['Limón Amarillo & Verde Fresco', 'Galleta María Casera', 'Crema Cítrica Reducida', 'Ralladura de Lima Kaffir'],
       allergens: ['gluten', 'dairy', 'eggs'],

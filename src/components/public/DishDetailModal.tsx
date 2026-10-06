@@ -45,11 +45,11 @@ export const DishDetailModal: React.FC<DishDetailModalProps> = ({
       {/* Backdrop click */}
       <div className="fixed inset-0" onClick={onClose}></div>
 
-      {/* Modal Container */}
-      <div className="relative z-10 bg-white w-full max-w-lg max-h-[90vh] rounded-t-3xl sm:rounded-3xl overflow-y-auto shadow-2xl border border-[#e4beb3]/40 flex flex-col animate-in slide-in-from-bottom duration-200">
+      {/* Modal Container Shell with strict border clipping */}
+      <div className="relative z-10 bg-white w-full max-w-lg max-h-[90vh] rounded-t-3xl sm:rounded-3xl overflow-hidden shadow-2xl border border-[#e4beb3]/40 flex flex-col animate-in slide-in-from-bottom duration-200">
         
-        {/* Modal Top Bar */}
-        <div className="sticky top-0 z-20 flex items-center justify-between px-5 py-3.5 bg-white/95 backdrop-blur-md border-b border-[#e4beb3]/20">
+        {/* Modal Top Bar (Fixed Header) */}
+        <div className="flex-shrink-0 flex items-center justify-between px-5 py-3.5 bg-white border-b border-[#e4beb3]/20">
           <span className="text-[11px] font-headline uppercase tracking-wider text-[#8f7067] font-bold">
             Ficha Técnica & Maridaje WebAR 1:1
           </span>
@@ -62,17 +62,19 @@ export const DishDetailModal: React.FC<DishDetailModalProps> = ({
           </button>
         </div>
 
-        {/* 3D AR Viewer Component Container */}
-        <div className="p-4 bg-[#fbf8fc]">
-          <ModelViewerAR
-            glbUrl={dish.glbModelUrl}
-            posterImage={dish.coverImage}
-            dishName={dish.name}
-            dimensions={dish.dimensions}
-            dishId={dish.id}
-            className="w-full shadow-md"
-          />
-        </div>
+        {/* Scrollable Inner Body - Scrollbar is safely contained between header and footer */}
+        <div className="flex-1 overflow-y-auto min-h-0 modal-scrollbar overscroll-contain">
+          {/* 3D AR Viewer Component Container */}
+          <div className="p-4 bg-[#fbf8fc]">
+            <ModelViewerAR
+              glbUrl={dish.glbModelUrl}
+              posterImage={dish.coverImage}
+              dishName={dish.name}
+              dimensions={dish.dimensions}
+              dishId={dish.id}
+              className="w-full shadow-md"
+            />
+          </div>
 
         {/* Modal Body Content */}
         <div className="p-5 flex flex-col gap-4">
@@ -198,20 +200,21 @@ export const DishDetailModal: React.FC<DishDetailModalProps> = ({
             </div>
           )}
 
-          {/* Action Order Button */}
-          <div className="pt-2 border-t border-[#e4beb3]/30">
-            <button
-              type="button"
-              onClick={handleOrderWhatsApp}
-              className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-full bg-[#ff5a1f] text-white text-xs font-bold shadow-md hover:bg-[#ae3200] transition-colors active:scale-95 cursor-pointer uppercase tracking-wider"
-            >
-              <span className="material-symbols-outlined text-lg">
-                add_shopping_cart
-              </span>
-              <span>Agregar a la Orden / Pedir al Mesero</span>
-            </button>
           </div>
+        </div>
 
+        {/* Modal Fixed Footer Bar for Action Order Button */}
+        <div className="flex-shrink-0 p-4 bg-white/95 backdrop-blur-md border-t border-[#e4beb3]/30">
+          <button
+            type="button"
+            onClick={handleOrderWhatsApp}
+            className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-full bg-[#ff5a1f] text-white text-xs font-bold shadow-md hover:bg-[#ae3200] transition-colors active:scale-95 cursor-pointer uppercase tracking-wider"
+          >
+            <span className="material-symbols-outlined text-lg">
+              add_shopping_cart
+            </span>
+            <span>Pedir por WhatsApp ({brand.currencySymbol}{dish.price.toFixed(2)})</span>
+          </button>
         </div>
 
       </div>

@@ -125,17 +125,25 @@ export const MenuCatalog: React.FC<MenuCatalogProps> = ({
             {/* 16:10 Photo - Clicking this large image opens the WebAR 1:1 view */}
             <div 
               onClick={() => onOpenARModal(activeDish)}
-              className="relative w-full aspect-[16/10] bg-[#f0edf1] rounded-2xl overflow-hidden cursor-pointer group select-none shadow-inner"
+              className="relative w-full aspect-[4/3] sm:aspect-[16/10] bg-[#1a1c18] rounded-2xl overflow-hidden cursor-pointer group select-none shadow-inner"
               title="Haz clic para proyectar en Realidad Aumentada (WebAR 1:1)"
             >
+              {/* Blurred atmospheric backdrop to blend poster sides */}
+              <img
+                src={activeDish.coverImage}
+                alt=""
+                className="absolute inset-0 w-full h-full object-cover blur-md opacity-45 scale-110"
+              />
+
+              {/* Main crisp image */}
               <img
                 src={activeDish.coverImage}
                 alt={activeDish.name}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="relative z-10 w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
               />
 
               {/* Pulsing AR Callout Pill in the center/upper area */}
-              <div className="absolute inset-0 bg-black/10 group-hover:bg-black/25 transition-colors flex items-center justify-center">
+              <div className="absolute inset-0 z-20 bg-black/15 group-hover:bg-black/25 transition-colors flex items-center justify-center">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/75 group-hover:bg-[#ff5a1f] text-white text-xs font-bold backdrop-blur-md border border-white/20 shadow-xl transform transition-transform group-hover:scale-105">
                   <span className="material-symbols-outlined text-base text-[#acedff] group-hover:text-white animate-pulse">
                     view_in_ar
@@ -146,14 +154,14 @@ export const MenuCatalog: React.FC<MenuCatalogProps> = ({
 
               {/* Top-left tag (only if featured or badgeText exists) */}
               {(activeDish.featured || activeDish.badgeText?.trim()) && (
-                <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-[#ff5a1f] text-white text-[10px] uppercase font-bold tracking-wider shadow-sm pointer-events-none">
+                <div className="absolute top-3 left-3 z-20 px-2.5 py-1 rounded-full bg-[#ff5a1f] text-white text-[10px] uppercase font-bold tracking-wider shadow-sm pointer-events-none">
                   {activeDish.featured ? 'Firma del Chef' : activeDish.badgeText}
                 </div>
               )}
 
               {/* Bottom-left Rating (only if rating exists and > 0) */}
               {activeDish.rating && activeDish.rating > 0 ? (
-                <div className="absolute bottom-3 left-3 flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#303033]/85 backdrop-blur-sm text-white text-xs font-semibold pointer-events-none">
+                <div className="absolute bottom-3 left-3 z-20 flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#303033]/85 backdrop-blur-sm text-white text-xs font-semibold pointer-events-none">
                   <span className="material-symbols-outlined text-[#fea619] text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>
                     star
                   </span>
@@ -165,7 +173,7 @@ export const MenuCatalog: React.FC<MenuCatalogProps> = ({
               ) : null}
 
               {/* Bottom-right Price */}
-              <div className="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-[#303033]/90 backdrop-blur-sm text-white font-bold text-base font-headline pointer-events-none">
+              <div className="absolute bottom-3 right-3 z-20 px-3 py-1 rounded-full bg-[#303033]/90 backdrop-blur-sm text-white font-bold text-base font-headline pointer-events-none">
                 {brand.currencySymbol}{activeDish.price.toFixed(2)}
               </div>
             </div>
