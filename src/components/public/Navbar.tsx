@@ -5,13 +5,11 @@ interface NavbarProps {
   brand: BrandSettings;
   socials: SocialLinks;
   location: LocationInfo;
-  onNavigateAdmin: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   brand,
-  location,
-  onNavigateAdmin
+  location
 }) => {
   return (
     <header className="fixed top-0 left-0 w-full z-40 bg-[#fbf8fc]/90 backdrop-blur-md border-b border-[#e4beb3]/30 shadow-sm">
@@ -36,32 +34,20 @@ export const Navbar: React.FC<NavbarProps> = ({
           </a>
         </div>
 
-        {/* Right: Location Selector Chip + Admin Shortcut */}
+        {/* Right: Location Chip (Coro, Falcón) linking to Google Maps */}
         <div className="flex items-center gap-2">
-          {(brand.localVenueName?.trim() || location.neighborhood?.trim()) && (
-            <a
-              href="#sede"
-              className="flex items-center gap-1 py-1.5 px-3 rounded-full bg-[#f0edf1] hover:bg-[#eae7eb] transition-colors active:scale-95 text-xs font-semibold text-[#1b1b1e]"
-            >
-              <span className="material-symbols-outlined text-[#00a0bb] text-base" style={{ fontVariationSettings: "'FILL' 1" }}>
-                location_on
-              </span>
-              <span>{brand.localVenueName?.trim() || location.neighborhood}</span>
-              <span className="material-symbols-outlined text-sm text-[#8f7067]">
-                expand_more
-              </span>
-            </a>
-          )}
-
-          <button
-            type="button"
-            onClick={onNavigateAdmin}
-            title="Panel de Configuración (/admin)"
-            className="p-1.5 sm:px-2.5 sm:py-1.5 rounded-full bg-[#ffdbd0]/60 hover:bg-[#ffdbd0] text-[#ae3200] text-xs font-semibold flex items-center gap-1 transition-all cursor-pointer"
+          <a
+            href={location.googleMapsUrl || "https://maps.app.goo.gl/d75weHAsCTNKMLWx6"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 py-1.5 px-3 rounded-full bg-[#f0edf1] hover:bg-[#eae7eb] transition-colors active:scale-95 text-xs font-semibold text-[#1b1b1e]"
+            title="Ver ubicación en Google Maps (Coro, Falcón)"
           >
-            <span className="material-symbols-outlined text-base">settings</span>
-            <span className="hidden sm:inline text-[11px] font-mono">/admin</span>
-          </button>
+            <span className="material-symbols-outlined text-[#00a0bb] text-base" style={{ fontVariationSettings: "'FILL' 1" }}>
+              location_on
+            </span>
+            <span>Coro, Falcón</span>
+          </a>
         </div>
 
       </div>

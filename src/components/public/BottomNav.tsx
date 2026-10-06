@@ -3,13 +3,11 @@ import React from 'react';
 interface BottomNavProps {
   activeTab: 'carta' | 'reservas' | 'resenas' | 'ubicacion';
   onSelectTab: (tab: 'carta' | 'reservas' | 'resenas' | 'ubicacion') => void;
-  onNavigateAdmin: () => void;
 }
 
 export const BottomNav: React.FC<BottomNavProps> = ({
   activeTab,
-  onSelectTab,
-  onNavigateAdmin
+  onSelectTab
 }) => {
   return (
     <nav className="fixed bottom-0 left-0 w-full z-40 bg-white/95 backdrop-blur-xl border-t border-[#e4beb3]/30 shadow-[0_-4px_20px_rgba(24,24,27,0.06)]">
@@ -93,21 +91,6 @@ export const BottomNav: React.FC<BottomNavProps> = ({
             Ubicación
           </span>
         </a>
-
-        {/* Admin Shortcut */}
-        <button
-          type="button"
-          onClick={onNavigateAdmin}
-          title="Panel Admin"
-          className="flex flex-col items-center justify-center py-1 px-2.5 rounded-xl text-[#8f7067] hover:text-[#ae3200] transition-colors cursor-pointer"
-        >
-          <span className="material-symbols-outlined text-2xl">
-            tune
-          </span>
-          <span className="text-[10px] font-headline uppercase tracking-wider font-bold">
-            Admin
-          </span>
-        </button>
 
       </div>
     </nav>

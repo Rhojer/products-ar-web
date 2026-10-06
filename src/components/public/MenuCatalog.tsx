@@ -67,56 +67,58 @@ export const MenuCatalog: React.FC<MenuCatalogProps> = ({
         {/* Header Count */}
         <div className="flex items-center justify-between">
           <h2 className="text-base sm:text-lg font-headline font-bold text-[#1b1b1e]">
-            Selección de Platillos
+            {dishes.length === 1 ? 'Postre Estrella WebAR 1:1' : 'Selección de Platillos'}
           </h2>
           <span className="text-[11px] font-headline uppercase tracking-wider text-[#8f7067]">
-            {dishes.length} {dishes.length === 1 ? 'platillo' : 'platillos'}
+            {dishes.length === 1 ? 'Especialidad de la Casa' : `${dishes.length} platillos`}
           </span>
         </div>
 
-        {/* Thumbnails Row Grid with Dynamic Scaling (selected is large, others are shrunk) */}
-        <div className="grid grid-cols-3 gap-2 items-center">
-          {dishes.map((dish) => {
-            const isSelected = dish.id === activeDish?.id;
-            
-            const badgeBg = 'bg-[#ff5a1f]';
-            const badgeLabel = dish.badgeText?.trim();
+        {/* Thumbnails Row Grid with Dynamic Scaling (only if multiple dishes) */}
+        {dishes.length > 1 && (
+          <div className="grid grid-cols-3 gap-2 items-center">
+            {dishes.map((dish) => {
+              const isSelected = dish.id === activeDish?.id;
+              
+              const badgeBg = 'bg-[#ff5a1f]';
+              const badgeLabel = dish.badgeText?.trim();
 
-            return (
-              <button
-                key={dish.id}
-                type="button"
-                onClick={() => setActiveDishId(dish.id)}
-                className={`text-left flex flex-col p-1.5 rounded-2xl transition-all duration-300 cursor-pointer overflow-hidden group bg-white shadow-xs ${
-                  isSelected
-                    ? 'scale-105 border-2 border-[#ae3200] ring-2 ring-[#ae3200]/25 shadow-md z-10 opacity-100'
-                    : 'scale-90 opacity-60 hover:opacity-90 hover:scale-95 border border-[#e4beb3]/30'
-                }`}
-              >
-                {/* Square Image with Badge (only if badgeLabel exists) */}
-                <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-[#f0edf1] mb-1.5">
-                  <img
-                    src={dish.coverImage}
-                    alt={dish.name}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                  {badgeLabel && (
-                    <div className={`absolute top-1 left-1 px-1.5 py-0.5 rounded-full ${badgeBg} text-white text-[9px] font-bold uppercase tracking-wider shadow-xs`}>
-                      {badgeLabel}
-                    </div>
-                  )}
-                </div>
+              return (
+                <button
+                  key={dish.id}
+                  type="button"
+                  onClick={() => setActiveDishId(dish.id)}
+                  className={`text-left flex flex-col p-1.5 rounded-2xl transition-all duration-300 cursor-pointer overflow-hidden group bg-white shadow-xs ${
+                    isSelected
+                      ? 'scale-105 border-2 border-[#ae3200] ring-2 ring-[#ae3200]/25 shadow-md z-10 opacity-100'
+                      : 'scale-90 opacity-60 hover:opacity-90 hover:scale-95 border border-[#e4beb3]/30'
+                  }`}
+                >
+                  {/* Square Image with Badge */}
+                  <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-[#f0edf1] mb-1.5">
+                    <img
+                      src={dish.coverImage}
+                      alt={dish.name}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    {badgeLabel && (
+                      <div className={`absolute top-1 left-1 px-1.5 py-0.5 rounded-full ${badgeBg} text-white text-[9px] font-bold uppercase tracking-wider shadow-xs`}>
+                        {badgeLabel}
+                      </div>
+                    )}
+                  </div>
 
-                <span className={`text-[11px] line-clamp-1 leading-tight ${isSelected ? 'font-bold text-[#1b1b1e]' : 'font-medium text-[#5b4038]'}`}>
-                  {dish.name}
-                </span>
-                <span className={`text-[11px] font-bold ${isSelected ? 'text-[#ae3200]' : 'text-[#8f7067]'}`}>
-                  {brand.currencySymbol}{dish.price.toFixed(2)}
-                </span>
-              </button>
-            );
-          })}
-        </div>
+                  <span className={`text-[11px] line-clamp-1 leading-tight ${isSelected ? 'font-bold text-[#1b1b1e]' : 'font-medium text-[#5b4038]'}`}>
+                    {dish.name}
+                  </span>
+                  <span className={`text-[11px] font-bold ${isSelected ? 'text-[#ae3200]' : 'text-[#8f7067]'}`}>
+                    {brand.currencySymbol}{dish.price.toFixed(2)}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        )}
 
         {/* 4. EXPANDED FEATURED DISH CARD (MATCHING STITCH) */}
         {activeDish && (

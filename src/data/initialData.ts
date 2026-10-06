@@ -16,12 +16,12 @@ export const ALLERGENS_LIST: Allergen[] = [
 export const INITIAL_RESTAURANT_DATA: RestaurantData = {
   brand: {
     name: 'AURA Pâtisserie',
-    localVenueName: 'AURA Pâtisserie • Boutique Dulce',
+    localVenueName: 'Coro, Falcón',
     culinaryTagline: 'Repostería Fina & Postres de Autor',
     seasonTag: 'Colección Dulce & Cítricos',
     menuSubtype: 'Carta de Postres Artesanales',
-    menuTitle: 'Nuestra Selección de Postres',
-    description: 'Explora nuestra exclusiva selección de repostería y postres de autor. Selecciona nuestra emblemática Marquesa de Limón para proyectarla en Realidad Aumentada (WebAR 1:1) en tu mesa a escala real antes de ordenar.',
+    menuTitle: 'Nuestra Especialidad',
+    description: 'Disfruta nuestra deliciosa Marquesa de Limón artesanal en Coro, Falcón. Proyéctala en Realidad Aumentada (WebAR 1:1) en tu mesa a escala real antes de ordenar.',
     hours: 'Horario hoy: 11:00 – 21:30 hrs',
     isOpenManual: true,
     useAutomaticSchedule: false,
@@ -38,17 +38,17 @@ export const INITIAL_RESTAURANT_DATA: RestaurantData = {
     website: 'https://aura-bistro.com'
   },
   location: {
-    address: 'Av. Presidente Masaryk 410',
-    neighborhood: 'Polanco IV Secc',
-    postalCode: '11550',
-    city: 'Ciudad de México',
-    country: 'México',
-    googleMapsUrl: 'https://maps.google.com/?q=Av.+Presidente+Masaryk+410+Polanco+CDMX',
-    googleMapsEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.6617066925235!2d-99.19658592395349!3d19.430229381847113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2020272b1604d%3A0xe5495f87b8dbcb2b!2sAv.%20Pdte.%20Masaryk%20410%2C%20Polanco%2C%20Polanco%20IV%20Secc%2C%20Miguel%20Hidalgo%2C%2011550%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses!2smx!4v1710000000000!5m2!1ses!2smx',
-    metroBusAccess: 'Metro Polanco (Línea 7) a 6 minutos caminando. Acceso directo por Av. Molière y Masaryk.',
-    parkingInfo: 'Valet Parking en puerta sobre Masaryk. Servicio concierge para pedidos especiales y mesas.',
+    address: 'Calle Ampíes, Urb. Cruz Verde',
+    neighborhood: 'Cruz Verde',
+    postalCode: '4101',
+    city: 'Coro',
+    country: 'Venezuela',
+    googleMapsUrl: 'https://maps.app.goo.gl/d75weHAsCTNKMLWx6',
+    googleMapsEmbedUrl: 'https://maps.google.com/maps?q=11.403120,-69.675580&hl=es&z=16&output=embed',
+    metroBusAccess: 'Entregas y pedidos para llevar en Coro, Falcón.',
+    parkingInfo: 'Zona de retiro rápido en Cruz Verde.',
     phone: '0412-9506476',
-    email: 'concierge@aurapatisserie.mx'
+    email: 'pedidos@aurapatisserie.com'
   },
   dishes: [
     {
@@ -78,61 +78,6 @@ export const INITIAL_RESTAURANT_DATA: RestaurantData = {
       chefNote: 'Servir bien fría. Recomendamos probar cada bocado abarcando todas sus capas para apreciar la armonía entre la crema cítrica y la galleta.',
       rating: 5.0,
       reviewsCount: 194
-    },
-    {
-      id: 'esfera-chocolate',
-      name: 'Esfera Volcánica de Chocolate Belga',
-      category: 'postres',
-      price: 9.50,
-      currency: '$',
-      coverImage: 'https://images.unsplash.com/photo-1579372786545-d24232daf58c?auto=format&fit=crop&w=800&q=80',
-      glbModelUrl: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/Cake/glTF-Binary/Cake.glb',
-      dimensions: {
-        diameterCm: 15,
-        widthCm: 15,
-        heightCm: 6.5,
-        portionWeightG: 210
-      },
-      shortDescription: 'Cúpula de chocolate belga al 72%, corazón de praliné de avellanas tostadas del Piamonte y salsa caliente de toffee a la flor de sal.',
-      fullDescription: 'Cúpula geométrica de chocolate amargo belga origen sostenible 72%. Al servir en mesa, se vierte una reducción caliente de toffee caramelizado que funde lentamente la cubierta liberando avellanas tostadas y frambuesas.',
-      keyIngredients: ['Chocolate Belga 72%', 'Avellanas IGP Piamonte', 'Caramelo a la Flor de Sal', 'Frutos Rojos Silvestres'],
-      allergens: ['gluten', 'dairy', 'nuts', 'eggs'],
-      sommelierPairing: 'Vino dulce Oporto Tawny o Espresso Doble',
-      isAvailable: true,
-      featured: false,
-      badgeText: 'Chocolate Lovers',
-      prepTime: '5 min',
-      calories: '420 kcal',
-      chefNote: 'El contraste térmico entre la cúpula fría y la salsa tibia desencadena notas profundas de cacao tostado.',
-      rating: 4.9,
-      reviewsCount: 148
-    },
-    {
-      id: 'pavlova-frutos-rojos',
-      name: 'Pavlova Crujiente de Frutos Rojos',
-      category: 'postres',
-      price: 8.00,
-      currency: '$',
-      coverImage: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80',
-      dimensions: {
-        diameterCm: 13,
-        widthCm: 13,
-        heightCm: 8.0,
-        portionWeightG: 180
-      },
-      shortDescription: 'Merengue francés crujiente con centro esponjoso tipo nube, chantilly ligera de vainilla de Papantla y coulis fresco de frambuesas silvestres.',
-      fullDescription: 'Nube de merengue horneada lentamente a baja temperatura para lograr una corteza delicadamente quebradiza y un interior ligero. Coronada con chantilly fresca aromatizada con vainilla natural y frutos rojos de temporada.',
-      keyIngredients: ['Merengue Francés', 'Vainilla Natural de Papantla', 'Frambuesas Frescas', 'Moras Silvestres'],
-      allergens: ['dairy', 'eggs'],
-      sommelierPairing: 'Champagne Rosé o Té Blanco de Jazmín',
-      isAvailable: true,
-      featured: false,
-      badgeText: 'Ligero & Refrescante',
-      prepTime: 'Listo para degustar',
-      calories: '290 kcal',
-      chefNote: 'Un postre sumamente sutil y etéreo con notas aromáticas florales y acidez natural de frutos silvestres.',
-      rating: 4.8,
-      reviewsCount: 112
     }
   ],
   reviews: [

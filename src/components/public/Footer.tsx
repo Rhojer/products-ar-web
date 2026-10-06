@@ -13,14 +13,12 @@ interface FooterProps {
   brand: BrandSettings;
   socials: SocialLinks;
   location: LocationInfo;
-  onNavigateAdmin: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({
   brand,
   socials,
-  location,
-  onNavigateAdmin
+  location
 }) => {
   return (
     <footer className="bg-[#08090d] border-t border-white/10 pt-16 pb-12">
@@ -149,17 +147,6 @@ export const Footer: React.FC<FooterProps> = ({
             <p className="text-xs text-gray-400">
               {location.address}, {location.city}
             </p>
-
-            <div className="pt-2">
-              <button
-                type="button"
-                onClick={onNavigateAdmin}
-                className="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-white/5 hover:bg-amber-500/10 border border-white/10 hover:border-amber-500/30 text-xs text-amber-300 transition-all cursor-pointer"
-              >
-                <Settings className="w-3.5 h-3.5" />
-                <span>Panel de Administración (/admin)</span>
-              </button>
-            </div>
           </div>
 
         </div>

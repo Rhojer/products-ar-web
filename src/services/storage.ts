@@ -2,7 +2,7 @@ import { get, set, del, keys } from 'idb-keyval';
 import { RestaurantData, BrandSettings, SocialLinks, LocationInfo } from '../types/restaurant';
 import { INITIAL_RESTAURANT_DATA } from '../data/initialData';
 
-const STORAGE_KEY = 'aura_postres_restaurant_data_v3';
+const STORAGE_KEY = 'aura_postres_restaurant_data_v4';
 const IDB_PREFIX_GLB = 'glb_model_';
 const IDB_PREFIX_IMG = 'img_cover_';
 
@@ -13,16 +13,17 @@ export const loadRestaurantData = async (): Promise<RestaurantData> => {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) {
-      // Clean up previous v1 and v2 cache if exists
+      // Clean up previous v1, v2, v3 cache if exists
       localStorage.removeItem('aura_gastro_restaurant_data_v1');
       localStorage.removeItem('aura_postres_restaurant_data_v2');
+      localStorage.removeItem('aura_postres_restaurant_data_v3');
       await saveRestaurantData(INITIAL_RESTAURANT_DATA);
       return INITIAL_RESTAURANT_DATA;
     }
     const data: Partial<RestaurantData> = JSON.parse(raw);
 
-    // If storage still contains old savory test data, refresh to dessert theme
-    if (data.dishes?.some(d => d.id === 'ribeye') || data.brand?.name?.includes('Bistro')) {
+    // If storage still contains old data with multiple dishes or non-Coro location, refresh
+    if ((data.dishes && data.dishes.length > 1) || data.location?.city !== 'Coro') {
       await saveRestaurantData(INITIAL_RESTAURANT_DATA);
       return INITIAL_RESTAURANT_DATA;
     }
