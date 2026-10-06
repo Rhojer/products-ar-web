@@ -193,8 +193,8 @@ export const MenuCatalog: React.FC<MenuCatalogProps> = ({
                 )}
               </div>
 
-              {/* Quick Specs Grid (Preparación, Calorías, Maridaje) */}
-              {(activeDish.prepTime?.trim() || activeDish.calories?.trim() || activeDish.sommelierPairing?.trim()) && (
+              {/* Quick Specs Grid (Preparación, Calorías) */}
+              {(activeDish.prepTime?.trim() || activeDish.calories?.trim()) && (
                 <div className="grid grid-cols-2 gap-2 p-3 rounded-2xl bg-[#f6f2f7] border border-[#e4beb3]/20">
                   {activeDish.prepTime?.trim() && (
                     <div className="flex items-start gap-1.5">
@@ -223,20 +223,6 @@ export const MenuCatalog: React.FC<MenuCatalogProps> = ({
                       </div>
                     </div>
                   )}
-
-                  {activeDish.sommelierPairing?.trim() && (
-                    <div className="flex items-start gap-1.5 col-span-2 pt-1 border-t border-[#e4beb3]/20">
-                      <span className="material-symbols-outlined text-[#855300] text-base mt-0.5">
-                        wine_bar
-                      </span>
-                      <div>
-                        <span className="block text-[10px] text-[#8f7067]">Maridaje sugerido</span>
-                        <span className="text-xs font-bold text-[#1b1b1e]">
-                          {activeDish.sommelierPairing}
-                        </span>
-                      </div>
-                    </div>
-                  )}
                 </div>
               )}
 
@@ -259,12 +245,12 @@ export const MenuCatalog: React.FC<MenuCatalogProps> = ({
                 </div>
               )}
 
-              {/* Nota del Chef Ejecutivo */}
+              {/* Nota */}
               {activeDish.chefNote?.trim() && (
                 <div className="p-3 rounded-2xl bg-[#f0edf1]/60 border-l-4 border-[#ae3200]">
                   <span className="text-[10px] font-headline uppercase tracking-wider text-[#ae3200] font-bold flex items-center gap-1">
-                    <span className="material-symbols-outlined text-sm">person</span>
-                    Nota del Chef Ejecutivo
+                    <span className="material-symbols-outlined text-sm">info</span>
+                    Nota
                   </span>
                   <p className="text-xs text-[#5b4038] mt-1 italic leading-relaxed">
                     "{activeDish.chefNote}"

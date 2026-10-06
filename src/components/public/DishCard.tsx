@@ -121,18 +121,8 @@ export const DishCard: React.FC<DishCardProps> = ({
               <span className="text-[10px] text-gray-400 pl-1">+{dishAllergens.length - 4}</span>
             )}
           </div>
-
-          {/* Sommelier hint */}
-          {dish.sommelierPairing && (
-            <div className="inline-flex items-center gap-1 text-[11px] text-amber-400/80">
-              <Wine className="w-3 h-3" />
-              <span className="truncate max-w-[120px] hidden sm:inline">Maridaje</span>
-            </div>
-          )}
         </div>
-
       </div>
-
     </div>
   );
 };

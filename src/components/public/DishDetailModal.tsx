@@ -51,7 +51,7 @@ export const DishDetailModal: React.FC<DishDetailModalProps> = ({
         {/* Modal Top Bar (Fixed Header) */}
         <div className="flex-shrink-0 flex items-center justify-between px-5 py-3.5 bg-white border-b border-[#e4beb3]/20">
           <span className="text-[11px] font-headline uppercase tracking-wider text-[#8f7067] font-bold">
-            Ficha Técnica & Maridaje WebAR 1:1
+            Ficha Técnica WebAR 1:1
           </span>
           <button
             type="button"
@@ -136,21 +136,6 @@ export const DishDetailModal: React.FC<DishDetailModalProps> = ({
                 </div>
               )}
 
-              {/* Maridaje */}
-              {dish.sommelierPairing?.trim() && (
-                <div className="flex items-start gap-2 col-span-2 pt-1 border-t border-[#e4beb3]/20">
-                  <span className="material-symbols-outlined text-[#855300] text-lg mt-0.5">
-                    wine_bar
-                  </span>
-                  <div>
-                    <span className="block text-[10px] text-[#8f7067]">Maridaje sugerido</span>
-                    <span className="text-xs font-bold text-[#1b1b1e]">
-                      {dish.sommelierPairing}
-                    </span>
-                  </div>
-                </div>
-              )}
-
               {/* Alérgenos */}
               {dishAllergens.length > 0 && (
                 <div className="flex items-start gap-2 col-span-2 pt-1 border-t border-[#e4beb3]/20">
@@ -187,12 +172,12 @@ export const DishDetailModal: React.FC<DishDetailModalProps> = ({
             </div>
           )}
 
-          {/* Nota del Chef Ejecutivo */}
+          {/* Nota */}
           {dish.chefNote?.trim() && (
             <div className="p-3.5 rounded-2xl bg-[#f0edf1]/60 border-l-4 border-[#ae3200]">
               <span className="text-[10px] font-headline uppercase tracking-wider text-[#ae3200] font-bold flex items-center gap-1">
-                <span className="material-symbols-outlined text-sm">person</span>
-                Nota del Chef Ejecutivo
+                <span className="material-symbols-outlined text-sm">info</span>
+                Nota
               </span>
               <p className="text-xs text-[#5b4038] mt-1 italic leading-relaxed">
                 "{dish.chefNote}"

@@ -121,7 +121,7 @@ export const LocationSection: React.FC<LocationSectionProps> = ({
 
       </section>
 
-      {/* 7. REDES SOCIALES & CONTACTO (COMUNIDAD AURA) */}
+      {/* 7. REDES SOCIALES & CONTACTO (COMUNIDAD POSTRES) */}
       {(socials.instagram?.trim() || socials.tiktok?.trim() || socials.whatsapp?.trim() || socials.facebook?.trim()) && (
         <section className="bg-[#f6f2f7] rounded-3xl p-4 sm:p-5 border border-[#e4beb3]/20 flex flex-col gap-3">
           <div className="flex items-center justify-between">
@@ -129,7 +129,7 @@ export const LocationSection: React.FC<LocationSectionProps> = ({
               <h3 className="text-sm font-bold text-[#1b1b1e] font-headline">
                 Comunidad {brand.name}
               </h3>
-              <p className="text-xs text-[#8f7067]">Novedades y reservas directas</p>
+              <p className="text-xs text-[#8f7067]">Novedades y pedidos directos</p>
             </div>
 
             <div className="w-8 h-8 rounded-full bg-[#ffdbd0]/60 flex items-center justify-center text-[#ae3200]">

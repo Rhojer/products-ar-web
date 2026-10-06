@@ -122,10 +122,10 @@ export const ReviewsSection: React.FC<ReviewsSectionProps> = ({ reviews }) => {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in">
           <div className="bg-white rounded-3xl p-6 max-w-sm w-full space-y-4 shadow-2xl border border-[#e4beb3]/30">
             <h3 className="font-headline font-bold text-lg text-[#1b1b1e]">Comparte tu Experiencia</h3>
-            <p className="text-xs text-[#5b4038]">¿Qué plato proyectaste en Realidad Aumentada y cómo fue tu visita a AURA Bistro?</p>
+            <p className="text-xs text-[#5b4038]">¿Qué te pareció proyectar la Marquesa en Realidad Aumentada y cómo fue tu experiencia con POSTRES?</p>
             <textarea
               rows={3}
-              placeholder="Cuéntanos sobre los sabores, la temperatura, el maridaje..."
+              placeholder="Cuéntanos sobre los sabores, la textura, la experiencia WebAR..."
               className="w-full p-3 bg-[#f6f2f7] rounded-xl text-xs border border-[#e4beb3]/30 focus:outline-none focus:border-[#ae3200]"
             />
             <div className="flex gap-2 justify-end">

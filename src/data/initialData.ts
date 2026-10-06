@@ -15,9 +15,9 @@ export const ALLERGENS_LIST: Allergen[] = [
 
 export const INITIAL_RESTAURANT_DATA: RestaurantData = {
   brand: {
-    name: 'AURA Pâtisserie',
+    name: 'POSTRES',
     localVenueName: 'Coro, Falcón',
-    culinaryTagline: 'Repostería Fina & Postres de Autor',
+    culinaryTagline: 'Repostería Artesanal & Postres',
     seasonTag: 'Colección Dulce & Cítricos',
     menuSubtype: 'Carta de Postres Artesanales',
     menuTitle: 'Nuestra Especialidad',
@@ -31,24 +31,24 @@ export const INITIAL_RESTAURANT_DATA: RestaurantData = {
     coverBannerUrl: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1600&q=80'
   },
   socials: {
-    instagram: 'https://instagram.com/aura_patisserie',
-    tiktok: 'https://tiktok.com/@aurapatisserie',
+    instagram: 'https://instagram.com/postres',
+    tiktok: 'https://tiktok.com/@postres',
     whatsapp: '+584129506476',
-    facebook: 'https://facebook.com/aurapatisseriemx',
-    website: 'https://aura-bistro.com'
+    facebook: 'https://facebook.com/postres',
+    website: 'https://postres.com'
   },
   location: {
     address: 'Calle Ampíes, Urb. Cruz Verde',
-    neighborhood: 'Cruz Verde',
+    neighborhood: 'Centro de Coro',
     postalCode: '4101',
     city: 'Coro',
     country: 'Venezuela',
     googleMapsUrl: 'https://maps.app.goo.gl/d75weHAsCTNKMLWx6',
     googleMapsEmbedUrl: 'https://maps.google.com/maps?q=11.403120,-69.675580&hl=es&z=16&output=embed',
     metroBusAccess: 'Entregas y pedidos para llevar en Coro, Falcón.',
-    parkingInfo: 'Zona de retiro rápido en Cruz Verde.',
+    parkingInfo: 'Zona de retiro rápido en centro de Coro.',
     phone: '0412-9506476',
-    email: 'pedidos@aurapatisserie.com'
+    email: 'pedidos@postres.com'
   },
   dishes: [
     {
@@ -69,7 +69,6 @@ export const INITIAL_RESTAURANT_DATA: RestaurantData = {
       fullDescription: 'Nuestra emblemática Marquesa de Limón equilibra la acidez fresca del limón amarillo y verde con la sutil dulzura de nuestra crema artesanal reducida, intercalada con finas capas de galleta María infusionada con ralladura de lima kaffir.',
       keyIngredients: ['Limón Amarillo & Verde Fresco', 'Galleta María Casera', 'Crema Cítrica Reducida', 'Ralladura de Lima Kaffir'],
       allergens: ['gluten', 'dairy', 'eggs'],
-      sommelierPairing: 'Té Earl Grey frío, Limoncello artesanal o Café Cold Brew',
       isAvailable: true,
       featured: true,
       badgeText: 'Especialidad WebAR',
