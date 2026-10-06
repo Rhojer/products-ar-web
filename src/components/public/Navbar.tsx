@@ -21,7 +21,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="flex items-center gap-2.5">
           <a href="#" className="flex items-center gap-2 group">
             <div className="w-9 h-9 rounded-xl bg-[#ffdbd0] text-[#ae3200] flex items-center justify-center font-bold shadow-sm group-hover:scale-105 transition-transform">
-              <span className="material-symbols-outlined text-xl">restaurant_menu</span>
+              <span className="material-symbols-outlined text-xl">cake</span>
             </div>
             <div className="flex flex-col">
               <span className="font-headline text-lg sm:text-xl font-bold tracking-tight text-[#ae3200] leading-none">

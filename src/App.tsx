@@ -178,7 +178,7 @@ export function App() {
     return (
       <div className="min-h-screen bg-[#fbf8fc] flex flex-col items-center justify-center text-[#1b1b1e]">
         <div className="w-12 h-12 border-3 border-[#ffdbd0] border-t-[#ae3200] rounded-full animate-spin mb-4"></div>
-        <p className="font-headline font-bold text-lg text-[#ae3200]">AURA Bistro</p>
+        <p className="font-headline font-bold text-lg text-[#ae3200]">AURA Pâtisserie</p>
         <p className="text-xs text-[#8f7067] mt-1 uppercase tracking-widest">Iniciando experiencia WebAR...</p>
       </div>
     );

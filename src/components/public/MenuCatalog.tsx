@@ -15,7 +15,7 @@ export const MenuCatalog: React.FC<MenuCatalogProps> = ({
   onOpenARModal
 }) => {
   // Selected dish for the interactive expanded card
-  const [activeDishId, setActiveDishId] = useState<string>(dishes[0]?.id || 'ribeye');
+  const [activeDishId, setActiveDishId] = useState<string>(dishes[0]?.id || 'marquesa-limon');
 
   const activeDish = dishes.find(d => d.id === activeDishId) || dishes[0];
 

@@ -2,7 +2,7 @@ import { get, set, del, keys } from 'idb-keyval';
 import { RestaurantData, BrandSettings, SocialLinks, LocationInfo } from '../types/restaurant';
 import { INITIAL_RESTAURANT_DATA } from '../data/initialData';
 
-const STORAGE_KEY = 'aura_gastro_restaurant_data_v1';
+const STORAGE_KEY = 'aura_postres_restaurant_data_v2';
 const IDB_PREFIX_GLB = 'glb_model_';
 const IDB_PREFIX_IMG = 'img_cover_';
 
@@ -13,11 +13,18 @@ export const loadRestaurantData = async (): Promise<RestaurantData> => {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) {
-      // First load, save initial
+      // Clean up previous v1 cache if exists
+      localStorage.removeItem('aura_gastro_restaurant_data_v1');
       await saveRestaurantData(INITIAL_RESTAURANT_DATA);
       return INITIAL_RESTAURANT_DATA;
     }
     const data: Partial<RestaurantData> = JSON.parse(raw);
+
+    // If storage still contains old savory test data, refresh to dessert theme
+    if (data.dishes?.some(d => d.id === 'ribeye') || data.brand?.name?.includes('Bistro')) {
+      await saveRestaurantData(INITIAL_RESTAURANT_DATA);
+      return INITIAL_RESTAURANT_DATA;
+    }
 
     // Deep merge to ensure newly added keys (seasonTag, menuSubtype, etc.) are never missing
     const mergedBrand: BrandSettings = {

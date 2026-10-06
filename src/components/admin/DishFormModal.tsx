@@ -35,9 +35,9 @@ const CATEGORIES: { id: Category; label: string }[] = [
 
 // Presets de modelos 3D de alta fidelidad para pruebas inmediatas
 const GLB_PRESETS = [
+  { name: 'Marquesa de Limón (Modelo 3D Local)', url: './models/marquesa-limon.glb' },
+  { name: 'Cúpula / Postre de Hojaldre', url: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/Cake/glTF-Binary/Cake.glb' },
   { name: 'Hamburguesa Artesanal (Burger)', url: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/Burger/glTF-Binary/Burger.glb' },
-  { name: 'Aguacate / Entrada Fresca', url: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/Avocado/glTF-Binary/Avocado.glb' },
-  { name: 'Postre de Hojaldre / Tarta', url: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/Cake/glTF-Binary/Cake.glb' },
 ];
 
 export const DishFormModal: React.FC<DishFormModalProps> = ({
