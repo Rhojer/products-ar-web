@@ -60,9 +60,9 @@ export const INITIAL_RESTAURANT_DATA: RestaurantData = {
       coverImage: 'https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=800&q=80',
       glbModelUrl: './models/marquesa-limon.glb',
       dimensions: {
-        diameterCm: 14,
-        widthCm: 14,
-        heightCm: 7.0,
+        diameterCm: 12,
+        widthCm: 11.8,
+        heightCm: 12.2,
         portionWeightG: 220
       },
       shortDescription: 'Capas delicadas de galleta María artesanal alternadas con crema suave de limón fresco, ralladura de lima y un toque aterciopelado de leche condensada.',
